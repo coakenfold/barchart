@@ -1,3 +1,9 @@
+- Create a bar chart in React from scratch using Redux Sagas that connects to a mock API made using https://my-json-server.typicode.com/.
+
+- Use React-JSS on any elements to provide styling. https://cssinjs.org/react-jss?v=v10.5.0
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
