@@ -16,13 +16,18 @@ const data = [
     normalized: 0.16666666666666666,
   },
 ];
-test("works", () => {
-  const classes = generateStyleObject({ data, barBase: { outline: "solid" } });
-  expect(classes).toEqual({
-    id_1: { height: "6rem", outline: "solid" },
-    id_2: { height: "9.333333333333334rem", outline: "solid" },
-    id_3: { height: "1rem", outline: "solid" },
-    id_4: { height: "11rem", outline: "solid" },
-    id_5: { height: "2.6666666666666665rem", outline: "solid" },
+describe("Bars.styles", () => {
+  test("works", () => {
+    const classes = generateStyleObject({
+      data,
+      barBase: { outline: "solid" },
+    });
+    expect(classes).toEqual({
+      id_1: { height: "6rem", outline: "solid" },
+      id_2: { height: "9.333333333333334rem", outline: "solid" },
+      id_3: { height: "1rem", outline: "solid" },
+      id_4: { height: "11rem", outline: "solid" },
+      id_5: { height: "2.6666666666666665rem", outline: "solid" },
+    });
   });
 });
