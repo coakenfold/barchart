@@ -4,12 +4,12 @@ import { Provider } from "react-redux";
 import store from "./store";
 import App from "./App";
 
-test("renders learn react link", () => {
+test("renders", () => {
   const { getByText } = render(
     <Provider store={store}>
       <App action={(type) => store.dispatch({ type })} />
     </Provider>
   );
 
-  expect(getByText(/INCREMENT_ASYNC/i)).toBeInTheDocument();
+  expect(getByText(/REQUEST_CHART_DATA/i)).toBeInTheDocument();
 });

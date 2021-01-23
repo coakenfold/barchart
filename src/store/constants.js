@@ -1,0 +1,3 @@
+export const UPDATE_CHART_DATA = "UPDATE_CHART_DATA";
+export const REQUEST_CHART_DATA = "REQUEST_CHART_DATA";
+export const API_ERROR = "API_ERROR";

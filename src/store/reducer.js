@@ -1,11 +1,11 @@
-export default function counter(state = 0, action) {
+import { UPDATE_CHART_DATA } from "./constants";
+export default function counter(state = { chart: [] }, action) {
   switch (action.type) {
-    case "INCREMENT":
-      return state + 1;
-    case "INCREMENT_IF_ODD":
-      return state % 2 !== 0 ? state + 1 : state;
-    case "DECREMENT":
-      return state - 1;
+    case UPDATE_CHART_DATA:
+      return {
+        ...state,
+        chart: action.data,
+      };
     default:
       return state;
   }
