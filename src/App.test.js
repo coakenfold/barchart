@@ -7,9 +7,20 @@ import App from "./App";
 test("renders", () => {
   const { getByText } = render(
     <Provider store={store}>
-      <App action={(type) => store.dispatch({ type })} />
+      <App />
     </Provider>
   );
 
-  expect(getByText(/REQUEST_CHART_DATA/i)).toBeInTheDocument();
+  expect(getByText(/get chart data/i)).toBeInTheDocument();
+});
+
+test("handles api down", () => {
+  store.dispatch({ type: "API_ERROR" });
+  const { getByText } = render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+
+  expect(getByText(/API is down/i)).toBeInTheDocument();
 });

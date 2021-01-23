@@ -1,11 +1,23 @@
 import React from "react";
-import { REQUEST_CHART_DATA } from "./store/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { requestChartData } from "./store/actions";
 function App({ action }) {
+  const apiError = useSelector((state) => state.apiError);
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
-      <button onClick={() => action(REQUEST_CHART_DATA)}>
-        REQUEST_CHART_DATA
-      </button>
+      {apiError ? (
+        <div>API is down</div>
+      ) : (
+        <button
+          onClick={() => {
+            dispatch(requestChartData());
+          }}
+        >
+          Get chart data
+        </button>
+      )}
     </div>
   );
 }
