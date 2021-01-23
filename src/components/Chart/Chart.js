@@ -1,13 +1,23 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./Chart.styles";
 import Bars from "../Bars/Bars";
 function Chart({ data }) {
+  const mainRef = useRef(null);
   const classes = styles();
   const placeholder = "Interact with a bar for more info";
   const [display, setDisplay] = useState(placeholder);
+  useEffect(() => {
+    mainRef.current.focus();
+  }, [mainRef]);
   return (
-    <div className={classes.chartRoot}>
+    <section className={classes.chartRoot}>
+      <div className={classes.chartMeta}>
+        <h1 tabIndex={0} ref={mainRef} className={classes.chartTitle}>
+          Sales for the year
+        </h1>
+        <p className={classes.display}>{display}</p>
+      </div>
       <ul className={classes.chart}>
         <Bars
           data={data}
@@ -16,11 +26,7 @@ function Chart({ data }) {
           }}
         />
       </ul>
-      <div className={classes.chartMeta}>
-        <h1 className={classes.chartTitle}>Sales for the year</h1>
-        <p className={classes.display}>{display}</p>
-      </div>
-    </div>
+    </section>
   );
 }
 const { arrayOf, object } = PropTypes;

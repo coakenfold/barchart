@@ -6,7 +6,7 @@ const appStyles = createUseStyles({
     justifyContent: "center",
   },
   getDataButton: {
-    fontSize: "inherit",
+    fontSize: "1.2rem",
     color: "rgb(255,255,255, 1)",
     transitionProperty: "all",
     transitionDuration: "0.75ms",
@@ -36,14 +36,6 @@ const appStyles = createUseStyles({
       color: "rgb(255,255,255)",
       cursor: "not-allowed",
     },
-  },
-  errorMessage: {
-    backgroundColor: "rgb(255,245,245)",
-    border: "1px solid rgb(252,129,129)",
-    padding: "0.75rem 1rem",
-    color: "rgb(197, 48, 48)",
-    borderRadius: ".25rem",
-    marginBottom: "1rem",
   },
 });
 
