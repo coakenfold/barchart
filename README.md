@@ -8,6 +8,7 @@
 ## Notable features
 
 - Handles offline/unreachable api
+- Keyboard support
 - Jest tests
 
 ## To run
