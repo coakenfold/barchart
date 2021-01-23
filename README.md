@@ -1,6 +1,6 @@
 - [ ] Create a bar chart in React
 - [x] Redux Saga connects to mock API via https://my-json-server.typicode.com/
-- [ ] Style via React-JSS https://cssinjs.org/react-jss?v=v10.5.0
+- [x] Style via React-JSS https://cssinjs.org/react-jss?v=v10.5.0
 - [x] Share code using GitHub.
 
 ## Available Scripts
