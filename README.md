@@ -8,7 +8,8 @@
 ## Notable features
 
 - Handles offline/unreachable api
-- Keyboard support
+- Operable via keyboard & screen reader
+- Tested with WAVE extension
 - Jest tests
 
 ## To run
