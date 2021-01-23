@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { requestChartData } from "./store/actions";
+import { requestChartData } from "../../store/actions";
 import styles from "./App.styles";
-import Chart from "./Chart";
+import Chart from "../Chart/Chart";
 
 function App() {
   const apiError = useSelector((state) => state.apiError);

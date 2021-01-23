@@ -1,5 +1,5 @@
 import { all, put, takeEvery, call } from "redux-saga/effects";
-import Api from "../service";
+import Api from "../service/service";
 import { REQUEST_CHART_DATA } from "./constants";
 import { updateChartData, apiError } from "./actions";
 

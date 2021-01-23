@@ -17,12 +17,12 @@ const data = [
   },
 ];
 test("works", () => {
-  const classes = generateStyleObject({ data });
+  const classes = generateStyleObject({ data, barBase: { outline: "solid" } });
   expect(classes).toEqual({
-    id_1: { height: "6rem" },
-    id_2: { height: "9.333333333333334rem" },
-    id_3: { height: "1rem" },
-    id_4: { height: "11rem" },
-    id_5: { height: "2.6666666666666665rem" },
+    id_1: { height: "6rem", outline: "solid" },
+    id_2: { height: "9.333333333333334rem", outline: "solid" },
+    id_3: { height: "1rem", outline: "solid" },
+    id_4: { height: "11rem", outline: "solid" },
+    id_5: { height: "2.6666666666666665rem", outline: "solid" },
   });
 });

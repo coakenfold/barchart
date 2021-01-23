@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "./Chart.styles";
-import Bars from "./Bars";
+import Bars from "../Bars/Bars";
 function Chart({ data }) {
   const classes = styles();
   const placeholder = "Interact with a bar for more info";
@@ -22,4 +23,8 @@ function Chart({ data }) {
     </div>
   );
 }
+const { arrayOf, object } = PropTypes;
+Chart.propTypes = {
+  data: arrayOf(object),
+};
 export default Chart;

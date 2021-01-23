@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./Bars.styles";
 function Bars({ data, displayData }) {
   const classes = styles({
@@ -48,4 +49,9 @@ function Bars({ data, displayData }) {
     );
   });
 }
+const { func, arrayOf, object } = PropTypes;
+Bars.propTypes = {
+  data: arrayOf(object),
+  displayData: func,
+};
 export default Bars;
