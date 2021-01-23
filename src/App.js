@@ -1,15 +1,23 @@
 import React from "react";
-import "./App.css";
-
+import { useDispatch, useSelector } from "react-redux";
+import { requestChartData } from "./store/actions";
 function App({ action }) {
+  const apiError = useSelector((state) => state.apiError);
+  const dispatch = useDispatch();
+
   return (
     <div className="App">
-      <button onClick={() => action("INCREMENT")}>Increment</button>
-      <button onClick={() => action("DECREMENT")}>DECREMENT</button>
-      <button onClick={() => action("INCREMENT_ASYNC")}>INCREMENT_ASYNC</button>
-      <button onClick={() => action("INCREMENT_IF_ODD")}>
-        INCREMENT_IF_ODD
-      </button>
+      {apiError ? (
+        <div>API is down</div>
+      ) : (
+        <button
+          onClick={() => {
+            dispatch(requestChartData());
+          }}
+        >
+          Get chart data
+        </button>
+      )}
     </div>
   );
 }
