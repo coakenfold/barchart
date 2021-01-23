@@ -8,3 +8,5 @@
 - `yarn install`
 - `npm run start`
 - `npm run test`
+
+Note: developed using Node v14.15.4
