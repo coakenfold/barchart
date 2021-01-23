@@ -22,7 +22,6 @@ const normalizeData = (data) => {
   const { min, max } = getMinMax(data);
   const range = getRange({ min, max });
   const normalized = data.map((cur) => {
-    console.log({ range, cur, min });
     cur.normalized = (cur.volume - min) / range;
     return cur;
   });
