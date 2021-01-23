@@ -1,10 +1,16 @@
-import { put, takeEvery, delay } from "redux-saga/effects";
-
-export function* incrementAsync() {
-  yield delay(1000);
-  yield put({ type: "INCREMENT" });
-}
+import { all, put, takeEvery, call } from "redux-saga/effects";
+import Api from "../service";
+import { REQUEST_CHART_DATA } from "./constants";
+import { updateChartData, apiError } from "./actions";
 
 export default function* rootSaga() {
-  yield takeEvery("INCREMENT_ASYNC", incrementAsync);
+  yield all([fetchChartFromApi()]);
+}
+
+export function* fetchChartFromApi() {
+  yield takeEvery(REQUEST_CHART_DATA, makeApiRequest);
+}
+export function* makeApiRequest() {
+  const data = yield call(Api.requestChartData);
+  yield put(data.error ? apiError() : updateChartData(data));
 }
